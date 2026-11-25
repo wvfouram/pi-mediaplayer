@@ -8,8 +8,12 @@ if [ "$(id -u)" = "0" ]; then
 fi
 
 echo "==> Installing packages"
-sudo apt-get update
-sudo apt-get install -y python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-gstreamer-1.0 gir1.2-gst-plugins-base-1.0 gstreamer1.0-gtk3 gstreamer1.0-plugins-good gstreamer1.0-plugins-base xdg-utils
+sudo apt-get update || echo "   (apt update had errors, continuing)"
+if ! sudo apt-get install -y python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-gstreamer-1.0 gir1.2-gst-plugins-base-1.0 gstreamer1.0-gtk3 gstreamer1.0-plugins-good gstreamer1.0-plugins-base xdg-utils; then
+  for p in python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-gstreamer-1.0 gir1.2-gst-plugins-base-1.0 gstreamer1.0-gtk3 gstreamer1.0-plugins-good gstreamer1.0-plugins-base xdg-utils; do
+    sudo apt-get install -y "$p" || echo "   (could not install $p)"
+  done
+fi
 sudo apt-get install -y fonts-open-sans || echo "   (Open Sans font not available, using system font)"
 for p in gstreamer1.0-libav gstreamer1.0-plugins-ugly ffmpegthumbnailer; do
   sudo apt-get install -y "$p" || echo "   ($p not available, skipping)"
