@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+<defs>
+<linearGradient id="linear-pattern-0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="16" y2="16" gradientTransform="matrix(4, 0, 0, 4, 0, 0)">
+<stop offset="0" stop-color="rgb(95%, 45%, 25%)" stop-opacity="1"/>
+<stop offset="1" stop-color="rgb(85%, 20%, 50%)" stop-opacity="1"/>
+</linearGradient>
+</defs>
+<path fill-rule="nonzero" fill="url(#linear-pattern-0)" d="M 46 4 C 53.730469 4 60 10.269531 60 18 L 60 46 C 60 53.730469 53.730469 60 46 60 L 18 60 C 10.269531 60 4 53.730469 4 46 L 4 18 C 4 10.269531 10.269531 4 18 4 Z M 46 4 "/>
+<path fill-rule="nonzero" fill="rgb(100%, 100%, 100%)" fill-opacity="0.95" d="M 24 18 L 46 32 L 24 46 Z M 24 18 "/>
+</svg>
